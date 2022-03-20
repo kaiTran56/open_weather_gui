@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 20px;
+}
+
+body > div{
+    background: url(stock/brg.jpg) center center/cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+body > div > .row >*{
+    padding: 0;
+}
+
+body > div > div .col-md-8{
+    display: flex;
+    align-items: center;
+}
+
+body > div > div .col-md-8 > div{
+    width: 100%;
+}
+
+.logo h1{
+    font-weight: 600;
+}
+
+.current-weather{
+    padding-left: 2vw;
+}
+.current-weather h1{
+    font-weight: 600;
+}
+
+.current-weather .current-temp h1{
+    font-size: 7rem;
+}
+
+.weather-forecast{
+    border: 3px solid rgba(202,196,180, 0.7);
+    background: rgba(202,196,180, 0.2);
+    border-radius: 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+}
+
+.weather-forecast h2{
+    font-weight: 600;
+}
+
+.weather-forecast .row{
+    width: 100%;
+}
+
+.current-info{
+    background: rgba(202,196,180, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-info .current-weather-items{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0;
+}
+
+.current-info .current-weather-items .weather-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 350px){
+    body > div{
+        height: fit-content;
+    }
+
+    .logo{
+        padding-bottom: 3rem;
+        padding-top: 3vh;
+        padding-left: 5vw;
+    }
+
+    .logo h1{
+        font-size: 1.5rem;
+    }
+
+    .logo .logo-item{
+        font-size: 1rem;
+    }
+
+    .current-weather .row >*,
+    .weather-forecast .row >*{
+        padding: 0;
+    }
+
+    .current-weather .row{
+        flex-direction: column-reverse;
+    }
+
+    .current-weather img{
+        height: 120px;
+    }
+
+    .weather-forecast{
+        padding: 1rem;
+        width: 90vw;
+        justify-content: center;
+        margin: 5vh auto;
+    }
+
+    .weather-forecast img{
+        height: 50px;
+    }
+
+    .weather-forecast h2{
+        font-size: 1.5rem;
+    }
+
+    .weather-forecast h4{
+        font-size: 0.9rem;
+    }
+
+    .current-info{
+        border-radius: 40px;
+        width: 90vw;
+        margin: auto;
+    }
+
+    .current-info .current-weather-items{
+        font-size: 1.2rem;
+        line-height: 3rem;
+        padding: 10px;
+    }
+
+    .cre{
+        margin: 3vh auto;
+        font-size: 0.8rem;
+        text-align: center;
+        bottom: 4rem;
+    }
+}
+
+@media only screen and (min-width: 700px){
+    body > div{
+        height: 100vh;
+    }
+
+    body > div .row{
+        justify-content: space-between;
+    }
+
+    body > div > div .col-md-8{
+        padding-left: 8rem;
+    }
+
+    body > div > .row >*{
+        padding: 0;
+        height: 100vh;
+    }
+
+    .logo{
+        padding-top: 0;
+        padding-left: 0;
+        padding-bottom: 10rem;
+    }
+
+    .logo h1{
+        font-size: 2rem;
+    }
+
+    .logo .logo-item{
+        font-size: 1.5rem;
+    }
+
+    .current-weather .row{
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .current-weather img{
+        height: 200px;
+    }
+
+    .weather-forecast h2{
+        font-size: 2rem;
+    }
+
+    .weather-forecast h4{
+        font-size: 1.2rem;
+    }
+
+    .weather-forecast{
+        padding: 2vw;
+        margin: 0;
+        margin-bottom: 15vh;
+        width: 80%;
+    }
+
+    .weather-forecast img{
+        height: 120px;
+    }
+
+    .current-info{
+        border-radius: 0;
+        width: 30vw;
+        margin: 0;
+    }
+
+    .current-info .current-weather-items .weather-item{
+        font-size: 1.8rem;
+        line-height: 9vh;
+    }
+
+    .cre{
+        font-size: 1rem;
+        position: absolute;
+        bottom: 4rem;
+        left: 8rem;
+    }
+}
