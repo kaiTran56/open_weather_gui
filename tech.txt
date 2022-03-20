@@ -1,0 +1,18 @@
+front end:
+1. html/css/js + bootstrap, jquery
+backend:
+java
+mariadb
+spring bootstrap
+spring security
+
+COMPONENTS:
+1. WEATHER: temperature, uv, humid, air condition, speed wind, (RAIN, SUNNY, ...), temp range
+2. Others: dropdown(cities), forecast 7 following days weather(TEMP, OVERALL WEATHER CONDITION) 
+
+
+FUNCTIONS:
+1. Get current weather
+2. Forecast weather each hours
+3. Forecase weather 7 following days
+4. Get weather by cities
