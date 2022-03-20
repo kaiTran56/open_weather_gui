@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Montserrat:wght@200;300&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 body{
     font-family: 'Quicksand', sans-serif;
@@ -31,18 +31,28 @@ body > div > div .col-md-8 > div{
 }
 
 .logo h1{
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .current-weather{
     padding-left: 2vw;
 }
+
 .current-weather h1{
     font-weight: 600;
 }
 
+.current-loc{
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.current-date{
+    letter-spacing: 1.5px;
+}
+
 .current-weather .current-temp h1{
     font-size: 7rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .weather-forecast{
@@ -77,6 +87,10 @@ body > div > div .col-md-8 > div{
     margin: 0;
 }
 
+.item{
+    color: rgba(146, 146, 146, 0.8);
+}
+
 .current-info .current-weather-items .weather-item{
     display: flex;
     justify-content: space-between;
@@ -99,6 +113,10 @@ body > div > div .col-md-8 > div{
 
     .logo .logo-item{
         font-size: 1rem;
+    }
+
+    .current-weather .current-temp h1{
+        font-size: 7rem;
     }
 
     .current-weather .row >*,
@@ -183,6 +201,11 @@ body > div > div .col-md-8 > div{
 
     .logo .logo-item{
         font-size: 1.5rem;
+    }
+
+    .current-weather .current-temp h1{
+        font-size: 9rem;
+        text-align: center;
     }
 
     .current-weather .row{
