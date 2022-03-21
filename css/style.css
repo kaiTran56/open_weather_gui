@@ -8,7 +8,7 @@ body{
 }
 
 body > div{
-    background: url(stock/brg.jpg) center center/cover;
+    background: url(../stock/brg.jpg) center center/cover;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
