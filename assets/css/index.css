@@ -1,0 +1,14 @@
+.select {
+  width: 200px;
+  height: 900%;
+  overflow-y: scroll;
+}
+
+.selection-capital {
+  width: 200px;
+  overflow-y: scroll;
+}
+
+.width-dropdown {
+  width: 200px;
+}
