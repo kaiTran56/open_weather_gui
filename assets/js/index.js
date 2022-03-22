@@ -4,7 +4,7 @@ $(document).ready(() => {
     getAllCapitalCities();
     getCoordintes();
     $('#btn_2').click((e) => {
-        getDailyWeather(SearchCondition);
+        getDailyWeather(hanoi);
     });
     $("#select-capital").change((e) => {
         let ob = $(e.target).val();
