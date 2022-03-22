@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Montserrat:wght@200;300&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 body{
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
@@ -8,7 +6,6 @@ body{
 }
 
 body > div{
-    background: url(../stock/brg.jpg) center center/cover;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;

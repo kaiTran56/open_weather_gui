@@ -71,7 +71,7 @@
   
   .menu-wrap .toggler:checked ~ .menu > div {
     transform: scale(1);
-    transition-duration: 1.5s;
+    transition-duration: 0.5s;
   }
   
   .menu-wrap .toggler:checked ~ .menu > div > div {

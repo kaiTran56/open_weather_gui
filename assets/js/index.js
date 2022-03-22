@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+    $("body").css("background-image", "url(https://img.locationscout.net/images/2019-09/tree-in-the-sunset-germany_l.jpeg)");
     getVietnamProvinces();
     getAllCapitalCities();
     getCoordintes();
@@ -91,9 +92,13 @@ let getCurrentWeather = (infor) => {
         dataType: 'json',
         cache: false,
         success: (data) => {
+            console.log(infor);
             data.dt = convertDate(data);
-            $("#txt-result").empty();
-            $("#txt-result").append(JSON.stringify(data));
+            $("body").css("background-image", "url(" + data.image + ")");
+            $("#temperature").html(Number(data.temp).toFixed(0)+"&#176;");
+            $("#address").html(infor.name);
+            $("#curr-date").html(data.dt);
+            $("#icon-weather").attr("src",data.icon);
         },
         error: (e) => {
             console.log(e);
@@ -104,7 +109,6 @@ let getCurrentWeather = (infor) => {
 let deleteProJson = (obj) => {
     delete obj.id;
     delete obj.listResult;
-    delete obj.name;
     return obj;
 }
 
@@ -124,8 +128,7 @@ function getCoordintes() {
         var crd = pos.coords;
         var lat = crd.latitude.toString();
         var lng = crd.longitude.toString();
-        var coordinates = { lat: lat, lon: lng };
-        console.log(`Latitude: ${lat}, Longitude: ${lng}`);
+        var coordinates = { lat: lat, lon: lng, name:"Vietnam" };
         getCurrentWeather(coordinates);
     }
 

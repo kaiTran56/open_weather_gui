@@ -2,145 +2,183 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="asset/bootstrap-5.0.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="asset/fontawesome-5/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <script src="asset/js/index.js"></script>
-  <title>WEEther|TxQ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/bootstrap-5.0.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/fontawesome-5/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/menu.css" />
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/constants.js"></script>
+  <script src="assets/js/index.js"></script>
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <!-- <title>WEEther|TxQ</title> -->
 </head>
 
 <body>
-  <div class="container-fluid ">
-    <div class="menu-wrap">
-      <input type="checkbox" class="toggler" id="menu-opt">
-      <div class="hamburger">
-        <div></div>
-      </div>
-      <div class="menu">
-        <div>
-          <div>
-            <ul>
-              <li><a href="#">Hanoi</a></li>
-              <li><a href="#">New York</a></li>
-              <li><a href="#">Berlin</a></li>
-              <li><a href="#">Tokyo</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-md-8">
         <div id="weather-area" class="">
           <div class="logo">
-            <h1>WEEther<span class="logo-item">.com</span></h1>
-
+            <!-- <h1>WEEther<span class="logo-item">.com</span></h1> -->
           </div>
+          <!--Current weather-->
           <div class="current-weather">
             <div class="row d-flex align-items-center g-0">
               <div class="col-12 col-md-3 current-temp text-center text-md-start">
-                <h1>26&#176;</h1>
+                <h1 id="temperature">26</h1>
               </div>
               <div class="col-12 col-md-3 text-center text-md-start">
                 <div>
-                  <h1 class="current-loc">Hanoi</h1>
+                  <h1 class="current-loc" id="address">Tokyo</h1>
                 </div>
                 <div>
-                  <h5 class="current-date">02:22 - Mon, 22 Feb'22</h5>
+                  <h5 class="current-date" id="curr-date">
+                    02:22 - Mon, 22 Feb'22
+                  </h5>
                 </div>
               </div>
               <div class="col-12 col-md-2 d-flex justify-content-center">
-                <img src="stock/icon.png" alt="icon">
+                <img src="Weather-icon.png" alt="icon" id="icon-weather" />
               </div>
             </div>
           </div>
 
           <div class="weather-forecast">
             <div class="row">
-              <div class="col-2">
-                <h2>Tue</h2>
-                <div class="icon">
-                  <img src="stock/sun.png" alt="icon">
+              <div class="col-12">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                  <div class="row carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row">
+                        <div class="col-4">
+                          <h2>TueTest</h2>
+                          <div class="icon">
+                            <img src="https://icons.iconarchive.com/icons/pixelkit/flat-jewels/512/Weather-icon.png"
+                              alt="icon" />
+                          </div>
+                          <h4>20-22&#176;C</h4>
+                        </div>
+                        <div class="col-4">
+                          <h2>Tue</h2>
+                          <div class="icon">
+                            <img
+                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
+                              alt="icon" />
+                          </div>
+                          <h4>20-22&#176;C</h4>
+                        </div>
+                        <div class="col-4">
+                          <h2>Tue</h2>
+                          <div class="icon">
+                            <img
+                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
+                              alt="icon" />
+                          </div>
+                          <h4>20-22&#176;C</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row">
+                        <div class="col-4">
+                          <h2>Tue</h2>
+                          <div class="icon">
+                            <img
+                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
+                              alt="icon" />
+                          </div>
+                          <h4>20-22&#176;C</h4>
+                        </div>
+                        <div class="col-4">
+                          <h2>Tue</h2>
+                          <div class="icon">
+                            <img src="https://icons.iconarchive.com/icons/pixelkit/flat-jewels/512/Weather-icon.png"
+                              alt="icon" />
+                          </div>
+                          <h4>20-22&#176;C</h4>
+                        </div>
+                        <div class="col-4">
+                          <h2>Tue</h2>
+                          <div class="icon">
+                            <img
+                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
+                              alt="icon" />
+                          </div>
+                          <h4>20-22&#176;C</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <h4>20-22&#176;C</h4>
-              </div>
-              <div class="col-2">
-                <h2>Wed</h2>
-                <div class="icon">
-                  <img src="stock/sun.png" alt="icon">
-                </div>
-                <h4>20-22&#176;C</h4>
-              </div>
-              <div class="col-2">
-                <h2>Thu</h2>
-                <div class="icon">
-                  <img src="stock/sun.png" alt="icon">
-                </div>
-                <h4>20-22&#176;C</h4>
-              </div>
-              <div class="col-2">
-                <h2>Fri</h2>
-                <div class="icon">
-                  <img src="stock/sun.png" alt="icon">
-                </div>
-                <h4>20-22&#176;C</h4>
-              </div>
-              <div class="col-2">
-                <h2>Sat</h2>
-                <div class="icon">
-                  <img src="stock/sun.png" alt="icon">
-                </div>
-                <h4>20-22&#176;C</h4>
-              </div>
-              <div class="col-2">
-                <h2>Sun</h2>
-                <div class="icon">
-                  <img src="stock/sun.png" alt="icon">
-                </div>
-                <h4>20-22&#176;C</h4>
               </div>
             </div>
-
           </div>
+        </div>
+      </div>
 
+      <div class="col-12 col-md-4 current-info" id="fade-menu">
+        <div class="row">
+          <div class="col-md-12 col-12 menu-wrap">
+            <input type="checkbox" class="toggler" id="menu-opt" />
+            <div class="hamburger">
+              <div></div>
+            </div>
+            <div class="menu">
+              <div class="col-md-6 position-absolute">
+                <select class="form-select selection-capital" aria-label="Default select example " id="select-capital">
+                  <option id="hanoi">Capital Cities</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
 
-      </div>
-      <div class="col-12 col-md-4 current-info">
         <div class="current-weather-items">
-          <div class="weather-item">
-            <div class="item">UV index</div>
-            <div>5</div>
+          <div class="row-cols-12 weather-item">
+            <div class="item text-black-50" id="painty-content">UV index</div>
+            <div class="" id="painty-content">5</div>
           </div>
           <div class="weather-item">
-            <div class="item">Humidity</div>
-            <div>57%</div>
+            <div class="item text-black-50" id="painty-content">Humidity</div>
+            <div id="painty-content">57%</div>
           </div>
           <div class="weather-item">
-            <div class="item">Air Condition</div>
-            <div>Good</div>
+            <div class="item text-black-50" id="painty-content">
+              Air Condition
+            </div>
+            <div id="painty-content">Good</div>
           </div>
           <div class="weather-item">
-            <div class="item">Wind</div>
-            <div>21km/h</div>
+            <div class="item text-black-50" id="painty-content">Wind</div>
+            <div id="painty-content">21km/h</div>
           </div>
           <div class="weather-item">
-            <div class="item">Precipitation</div>
-            <div>3%</div>
+            <div class="item text-black-50" id="painty-content">
+              Precipitation
+            </div>
+            <div id="painty-content">3%</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="cre">
-      1801040175x1901060054
-    </div>
-
+    <!-- <div class="cre">1801040175x1901060054</div> -->
   </div>
 </body>
 
