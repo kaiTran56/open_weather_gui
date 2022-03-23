@@ -80,7 +80,7 @@ body > div > div .col-md-8 > div{
 .current-info .current-weather-items{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    /* width: 80%; */
     margin: 0;
 }
 

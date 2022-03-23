@@ -6,16 +6,25 @@ $(document).ready(() => {
     $("#select-capital").change((e) => {
         let ob = $(e.target).val();
         if (ob === 'Capital Cities') {
+
             getCoordintes();
         } else {
-            console.log(ob);
             getCurrentWeather(JSON.parse(ob));
             getDailyWeather(JSON.parse(ob));
         }
+        $('#select-province').val('hanoi');
     });
+    $("#select-province").change((e) => {
 
-
-
+        let ob = $(e.target).val();
+        if (ob === 'Provinces') {
+            getCoordintes();
+        } else {
+            getCurrentWeather(JSON.parse(ob));
+            getDailyWeather(JSON.parse(ob));
+        }
+        $('#select-capital').val('hanoi');
+    });
 });
 
 let getVietnamProvinces = () => {
@@ -27,10 +36,11 @@ let getVietnamProvinces = () => {
         cache: false,
         success: (data) => {
             data.map(p => {
-                let option = '<li><a class="dropdown-item" id="opt_'
-                    + p.id + '" value="' + p
-                    + '">' + p.name + '</a></li>';
-                return $("#options").append(option);
+                p = deleteProJson(p);
+                let option = '<option id="opt_'
+                    + p.id + '" value=' +  JSON.stringify(p)
+                    + '>' + p.name + '</option>';
+                return $("#select-province").append(option);
             });
         },
         error: (e) => {
@@ -97,19 +107,18 @@ let getCurrentWeather = (infor) => {
         dataType: 'json',
         cache: false,
         success: (data) => {
-            console.log(data);
             data.dt = convertDate(data);
             $("body").css("background-image", "url(" + data.image + ")");
             $("#temperature").html(Number(data.temp).toFixed(0) + "&#176;");
             $("#address").html(infor.name);
             $("#curr-date").html(data.dt);
             $("#icon-weather").attr("src", data.icon);
-            $('#pressure').html(data.pressure);
-            $('#humidity').html(data.humidity);
-            $('#wind_speed').html(data.wind_speed);
+            $('#pressure').html(data.pressure+'kPa');
+            $('#humidity').html(data.humidity+'%');
+            $('#wind_speed').html(data.wind_speed+' km/h');
             $('#uvi').html(data.uvi);
             $('#clouds').html(data.clouds);
-            $('#visibility').html(data.visibility);
+            $('#visibility').html(data.visibility+'m');
             $('#description').html(data.weather[0].main);
             $('#pressure').html(data.pressure);
         },

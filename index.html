@@ -20,24 +20,10 @@
   <!-- <title>WEEther|TxQ</title> -->
 </head>
 
-<body>
+<body class="body-style">
   <div class="container-fluid">
-
     <div class="row">
-      <div class="col-md-12 col-12 menu-wrap" >
-        <input type="checkbox" class="toggler" id="menu-opt" />
-        <div class="hamburger">
-          <div></div>
-        </div>
-        <div class="menu">
-          <div class="col-md-6">
-            <select class="form-select selection-capital" aria-label="Default select example " id="select-capital">
-              <option id="hanoi">Capital Cities</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-8">
+      <div class="col-8 col-md-8">
         <div id="weather-area" class="">
           <div class="logo">
             <!-- <h1>WEEther<span class="logo-item">.com</span></h1> -->
@@ -93,41 +79,55 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-4 current-info" id="fade-menu">
-        <div class="current-weather-items" id="painty-content">
-          <div class="row-cols-12 weather-item">
-            <div class="item text-black-50" id="painty-content">UV index</div>
+      <div class="row col-8 col-md-4 current-info" id="fade-menu">
+        <div class="row col-12 col-md-12" id="painty-content">
+          <div class="col-6 col-md-6">
+            <select class="form-select selection-capital " aria-label="Default select example " id="select-province" >
+              <option  value="hanoi" id="hanoi">Provinces</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-6">
+            <select class="form-select selection-capital" aria-label="Default select example " id="select-capital">
+              <option value="hanoi" id="hanoi">Capital Cities</option>
+            </select>
+          </div>
+        </div>
+        <div class="row current-weather-items" id="painty-content">
+          <div class="weather-item">
+            <div class="item text-black-50" id="painty-content">
+              UV index:
+            </div>
             <div class="" id="uvi">5</div>
           </div>
           <div class="weather-item">
-            <div class="item text-black-50" id="painty-content">Humidity</div>
+            <div class="item text-black-50" id="painty-content">
+              Humidity:
+            </div>
             <div id="humidity">57%</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">
-              Pressure
+              Pressure:
             </div>
             <div id="pressure">Good</div>
           </div>
           <div class="weather-item">
-            <div class="item text-black-50" id="painty-content">Wind</div>
+            <div class="item text-black-50" id="painty-content">Wind:</div>
             <div id="wind_speed">21km/h</div>
           </div>
           <div class="weather-item">
-            <div class="item text-black-50" id="painty-content">
-              Clouds
-            </div>
+            <div class="item text-black-50" id="painty-content">Clouds:</div>
             <div id="clouds">3%</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">
-              Visibility
+              Visibility:
             </div>
             <div id="visibility">3%</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">
-              Description
+              Description:
             </div>
             <div id="description">3%</div>
           </div>
