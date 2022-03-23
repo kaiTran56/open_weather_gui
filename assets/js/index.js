@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    
     $("body").css("background-image", "url(https://img.locationscout.net/images/2019-09/tree-in-the-sunset-germany_l.jpeg)");
     getVietnamProvinces();
     getAllCapitalCities();
@@ -25,6 +26,23 @@ $(document).ready(() => {
         }
         $('#select-capital').val('hanoi');
     });
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-left",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "3000",
+        "hideDuration": "1000",
+        "timeOut": "2000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
 });
 
 let getVietnamProvinces = () => {
@@ -121,9 +139,11 @@ let getCurrentWeather = (infor) => {
             $('#visibility').html(data.visibility+'m');
             $('#description').html(data.weather[0].main);
             $('#pressure').html(data.pressure);
+            $('.toast').css('background-color', '#51A351');
+            toastr.success("Welcome to "+infor.name+"!");
         },
         error: (e) => {
-            console.log(e);
+            toastr.error("Faild to find "+infor.name+"!");
         }
     });
 };
