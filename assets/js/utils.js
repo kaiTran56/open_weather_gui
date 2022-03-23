@@ -19,3 +19,7 @@ let currWeather = {
     max: 21.05,
     visibility: 10000
 };
+
+let sortAsc=(data)=>{
+    return data.sort((a, b) => a.dt > b.dt ? -1 : (a.dt < b.dt ? 1 : 0));
+}

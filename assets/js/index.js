@@ -1,12 +1,8 @@
 $(document).ready(() => {
-
     $("body").css("background-image", "url(https://img.locationscout.net/images/2019-09/tree-in-the-sunset-germany_l.jpeg)");
     getVietnamProvinces();
     getAllCapitalCities();
     getCoordintes();
-    $('#btn_2').click((e) => {
-        getDailyWeather(hanoi);
-    });
     $("#select-capital").change((e) => {
         let ob = $(e.target).val();
         if (ob === 'Capital Cities') {
@@ -14,8 +10,11 @@ $(document).ready(() => {
         } else {
             console.log(ob);
             getCurrentWeather(JSON.parse(ob));
+            getDailyWeather(JSON.parse(ob));
         }
     });
+
+
 
 });
 
@@ -72,10 +71,16 @@ let getDailyWeather = (infor) => {
         dataType: 'json',
         cache: false,
         success: (data) => {
-            data.map(p => {
+            let sortData = sortAsc(data);
+            let com_1 = '';
+            let com_2 = '';
+            sortData.map((p, index) => {
                 p.dt = convertDate(p);
+                (index > 1 && index <= 4) ? com_1 = dailyComponent(p) + com_1 : '';
+                index > 4 ? com_2 = dailyComponent(p) + com_2 : '' ;
             });
-            $("#txt-result").append(JSON.stringify(data));
+            $('#item-1').html(com_1);
+            $('#item-2').html(com_2);            
         },
         error: (e) => {
             console.log(e);
@@ -92,13 +97,9 @@ let getCurrentWeather = (infor) => {
         dataType: 'json',
         cache: false,
         success: (data) => {
-            console.log(infor);
+            console.log(data);
             data.dt = convertDate(data);
-            $("body").css("background-image", "url(" + data.image + ")");
-            $("#temperature").html(Number(data.temp).toFixed(0)+"&#176;");
-            $("#address").html(infor.name);
-            $("#curr-date").html(data.dt);
-            $("#icon-weather").attr("src",data.icon);
+            currWeatherShow(data);
         },
         error: (e) => {
             console.log(e);
@@ -128,13 +129,44 @@ function getCoordintes() {
         var crd = pos.coords;
         var lat = crd.latitude.toString();
         var lng = crd.longitude.toString();
-        var coordinates = { lat: lat, lon: lng, name:"Vietnam" };
+        var coordinates = { lat: lat, lon: lng, name: "Vietnam" };
         getCurrentWeather(coordinates);
+        getDailyWeather(coordinates);
     }
-
     function error(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
+        getCurrentWeather(hanoi);
+        getDailyWeather(hanoi);
     }
 
     navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+let dailyComponent = (data) => {
+    let min = data.temp.min;
+    let max = data.temp.max;
+    let tempDay = data.temp.day;
+    return '<div class="col-4">' 
+        +'<h4>' + new Date(data.dt).toDateString() + '</h4>'
+        + '<div class="icon">'
+        + ' <img src="' + data.icon + '" alt="icon" />'
+        + '</div>'
+        + '<h4>Day:' + tempDay + '&#176;C</h4>'
+        + '<h6>' + min+'&#176;C' + ' : ' + max + '&#176;C</h6>'
+        + '</div>'
+}
+
+let currWeatherShow = (data)=>{
+    $("body").css("background-image", "url(" + data.image + ")");
+    $("#temperature").html(Number(data.temp).toFixed(0) + "&#176;");
+    $("#address").html(infor.name);
+    $("#curr-date").html(data.dt);
+    $("#icon-weather").attr("src", data.icon);
+    $('#pressure').html(data.pressure);
+    $('#humidity').html(data.humidity);
+    $('#wind_speed').html(data.wind_speed);
+    $('#uvi').html(data.uvi);
+    $('#clouds').html(data.clouds);
+    $('#visibility').html(data.visibility);
+    $('#description').html(data.weather[0].main);
+    $('#pressure').html(data.pressure);
 }

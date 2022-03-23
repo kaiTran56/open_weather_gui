@@ -22,7 +22,21 @@
 
 <body>
   <div class="container-fluid">
+
     <div class="row">
+      <div class="col-md-12 col-12 menu-wrap" >
+        <input type="checkbox" class="toggler" id="menu-opt" />
+        <div class="hamburger">
+          <div></div>
+        </div>
+        <div class="menu">
+          <div class="col-md-6">
+            <select class="form-select selection-capital" aria-label="Default select example " id="select-capital">
+              <option id="hanoi">Capital Cities</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div class="col-12 col-md-8">
         <div id="weather-area" class="">
           <div class="logo">
@@ -56,64 +70,10 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                   <div class="row carousel-inner">
                     <div class="carousel-item active">
-                      <div class="row">
-                        <div class="col-4">
-                          <h2>TueTest</h2>
-                          <div class="icon">
-                            <img src="https://icons.iconarchive.com/icons/pixelkit/flat-jewels/512/Weather-icon.png"
-                              alt="icon" />
-                          </div>
-                          <h4>20-22&#176;C</h4>
-                        </div>
-                        <div class="col-4">
-                          <h2>Tue</h2>
-                          <div class="icon">
-                            <img
-                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
-                              alt="icon" />
-                          </div>
-                          <h4>20-22&#176;C</h4>
-                        </div>
-                        <div class="col-4">
-                          <h2>Tue</h2>
-                          <div class="icon">
-                            <img
-                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
-                              alt="icon" />
-                          </div>
-                          <h4>20-22&#176;C</h4>
-                        </div>
-                      </div>
+                      <div class="row" id="item-1"></div>
                     </div>
                     <div class="carousel-item">
-                      <div class="row">
-                        <div class="col-4">
-                          <h2>Tue</h2>
-                          <div class="icon">
-                            <img
-                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
-                              alt="icon" />
-                          </div>
-                          <h4>20-22&#176;C</h4>
-                        </div>
-                        <div class="col-4">
-                          <h2>Tue</h2>
-                          <div class="icon">
-                            <img src="https://icons.iconarchive.com/icons/pixelkit/flat-jewels/512/Weather-icon.png"
-                              alt="icon" />
-                          </div>
-                          <h4>20-22&#176;C</h4>
-                        </div>
-                        <div class="col-4">
-                          <h2>Tue</h2>
-                          <div class="icon">
-                            <img
-                              src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png"
-                              alt="icon" />
-                          </div>
-                          <h4>20-22&#176;C</h4>
-                        </div>
-                      </div>
+                      <div class="row" id="item-2"></div>
                     </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
@@ -134,51 +94,47 @@
       </div>
 
       <div class="col-12 col-md-4 current-info" id="fade-menu">
-        <div class="row">
-          <div class="col-md-12 col-12 menu-wrap">
-            <input type="checkbox" class="toggler" id="menu-opt" />
-            <div class="hamburger">
-              <div></div>
-            </div>
-            <div class="menu">
-              <div class="col-md-6 position-absolute">
-                <select class="form-select selection-capital" aria-label="Default select example " id="select-capital">
-                  <option id="hanoi">Capital Cities</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="current-weather-items">
+        <div class="current-weather-items" id="painty-content">
           <div class="row-cols-12 weather-item">
             <div class="item text-black-50" id="painty-content">UV index</div>
-            <div class="" id="painty-content">5</div>
+            <div class="" id="uvi">5</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">Humidity</div>
-            <div id="painty-content">57%</div>
+            <div id="humidity">57%</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">
-              Air Condition
+              Pressure
             </div>
-            <div id="painty-content">Good</div>
+            <div id="pressure">Good</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">Wind</div>
-            <div id="painty-content">21km/h</div>
+            <div id="wind_speed">21km/h</div>
           </div>
           <div class="weather-item">
             <div class="item text-black-50" id="painty-content">
-              Precipitation
+              Clouds
             </div>
-            <div id="painty-content">3%</div>
+            <div id="clouds">3%</div>
+          </div>
+          <div class="weather-item">
+            <div class="item text-black-50" id="painty-content">
+              Visibility
+            </div>
+            <div id="visibility">3%</div>
+          </div>
+          <div class="weather-item">
+            <div class="item text-black-50" id="painty-content">
+              Description
+            </div>
+            <div id="description">3%</div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="cre">1801040175x1901060054</div> -->
+    <div class="cre">1801040175x1901060054</div>
   </div>
 </body>
 
