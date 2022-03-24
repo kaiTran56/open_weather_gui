@@ -191,7 +191,7 @@ let dailyComponent = (data) => {
         + '<div class="icon">'
         + ' <img src="' + data.icon + '" alt="icon" />'
         + '</div>'
-        + '<h4>Day:' + tempDay + '&#176;C</h4>'
+        // + '<h4>Day:' + tempDay + '&#176;C</h4>'
         + '<h6>' + min+'&#176;C' + ' : ' + max + '&#176;C</h6>'
         + '</div>'
 }
