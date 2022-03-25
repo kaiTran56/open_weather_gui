@@ -1,10 +1,19 @@
 front end:
 1. html/css/js + bootstrap, jquery
+
 backend:
 java
-mariadb
-spring bootstrap
-spring security
+spring boost
+spring jpa
+Rest template
+
+db: mysql
+
+texture: client side render
+
+api: open-weather => backend (customize, security) => front end
+
+
 
 COMPONENTS:
 1. WEATHER: temperature, uv, humid, air condition, speed wind, (RAIN, SUNNY, ...), temp range
@@ -12,7 +21,6 @@ COMPONENTS:
 
 
 FUNCTIONS:
-1. Get current weather
-2. Forecast weather each hours
-3. Forecase weather 7 following days
-4. Get weather by cities
+1. Get current weather based on current position
+2. Forecast weather 7 following days
+3. Get weather by cities
